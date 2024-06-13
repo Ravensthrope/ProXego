@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Login, Signup } from './pages';
+import { Dashboard, Login, Signup } from './pages';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       {/* Add more routes as needed */}
     </Routes>
   );

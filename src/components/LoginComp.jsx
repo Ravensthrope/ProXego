@@ -32,7 +32,11 @@ const LoginComp = () => {
       if (!res.ok) {
         setErrors(data.errors || {});
       } else {
-        navigate('/dashboard');
+        // Assuming your backend sends back the username
+        const { username } = data; // Adjust according to your actual backend response structure
+
+        // Navigate to dashboard and pass username as props
+        navigate('/dashboard', { state: { username } });
       }
     } catch (error) {
       console.log(error);

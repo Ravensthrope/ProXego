@@ -51,7 +51,7 @@ export async function signup_post(req, res) {
       maxAge: maxAge * 1000,
       sameSite: 'Lax',
     });
-    res.status(201).json({ newUser: newUser._id });
+    res.status(201).json({ newUser: newUser._id, username: newUser.username });
   } catch (err) {
     const errors = errHandler(err);
     res.status(400).json({ errors });
@@ -70,7 +70,7 @@ export async function login_post(req, res) {
       maxAge: maxAge * 1000,
       sameSite: 'Lax',
     });
-    res.status(200).json({ user: user._id });
+    res.status(200).json({ user: user._id, username: user.username });
   } catch (error) {
     console.log('Error:', error.message);
     const errors = errHandler(error);
